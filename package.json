@@ -1,1 +1,19 @@
-{\n  "name": "studio40",\n  "version": "1.0.0",\n  "private": true,\n  "scripts": {\n    "dev": "next dev",\n    "build": "next build",\n    "start": "next start"\n  },\n  "dependencies": {\n    "next": "13.x",\n    "react": "18.x",\n    "react-dom": "18.x"\n  },\n  "devDependencies": {\n    "eslint": "^8.0.0",\n    "eslint-config-next": "^13.0.0"\n  }\n}
+{
+  "name": "studio40",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "13.x",
+    "react": "18.x",
+    "react-dom": "18.x"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^13.0.0"
+  }
+}
