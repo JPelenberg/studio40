@@ -9,6 +9,7 @@ export default function Invitation() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,8 +18,18 @@ export default function Invitation() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Implement RSVP data storage (API call, local file, etc.)
-    setSubmitted(true);
+    setError("");
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setSubmitted(true);
+    } catch (err) {
+      setError("There was a problem submitting your RSVP. Please try again.");
+    }
   };
 
   return (
@@ -94,6 +105,7 @@ export default function Invitation() {
           </label>
           <br /><br />
           <button type="submit">Submit RSVP</button>
+          {error && <div style={{ color: "red" }}>{error}</div>}
         </form>
       )}
     </div>
