@@ -1,0 +1,20 @@
+# Go to your folder
+cd path/to/birthday-invite
+
+# Initialize git
+git init
+
+# Add all files
+git add .
+
+# Commit
+git commit -m "Initial commit"
+
+# Set branch to main
+git branch -M main
+
+# Connect to your GitHub repo
+git remote add origin https://github.com/JPelenberg/birthday-invite.git
+
+# Push to GitHub
+git push -u origin main
